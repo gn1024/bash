@@ -45,3 +45,5 @@ alias bundleid="mdls -name kMDItemCFBundleIdentifier"
 setenglish() { defaults write $(mdls -name kMDItemCFBundleIdentifier -raw "$@") AppleLanguages '("en-US")'; }
 unsetenglish() { defaults delete $(mdls -name kMDItemCFBundleIdentifier -raw "$@") AppleLanguages; }
 
+#Remove an app from quarantine
+alias unquarantine=sudo xattr -rd com.apple.quarantine 
