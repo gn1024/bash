@@ -7,6 +7,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias cat=ccat
+
 # Jump back n directories at a time
 alias ..='cd ..'
 alias ...='cd ../../'
