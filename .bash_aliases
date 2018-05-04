@@ -7,7 +7,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias cat=ccat
+alias cat='ccat'
 
 # Jump back n directories at a time
 alias ..='cd ..'
@@ -48,4 +48,4 @@ setenglish() { defaults write $(mdls -name kMDItemCFBundleIdentifier -raw "$@") 
 unsetenglish() { defaults delete $(mdls -name kMDItemCFBundleIdentifier -raw "$@") AppleLanguages; }
 
 #Remove an app from quarantine
-alias unquarantine=sudo xattr -rd com.apple.quarantine 
+alias unquarantine='sudo xattr -rd com.apple.quarantine '
