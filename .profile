@@ -27,7 +27,8 @@ case "$TERM" in
 esac
 
 
-PS1='\[\033[32m\]\h\e[0;37m@\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\] \$ '
+#PS1='\[\033[32m\]\h\e[0;37m@\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\] \$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'
 
 # ~/.dircolors/themefile
 eval $(gdircolors ~/.dircolors/dircolors.256dark)
