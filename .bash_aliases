@@ -1,6 +1,6 @@
 alias lla='ls -aFhlG'
 alias ll='ls -l'
-alias la='ls -laH'
+alias la='ls -lah'
 alias l='ls -CF'
 
 alias grep='grep --color=auto'
@@ -24,7 +24,7 @@ alias edit_hosts='edit /etc/hosts'
 alias ports='sudo lsof -iTCP -sTCP:LISTEN -P'
 
 # Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cask upgrade; ncu -g; gcloud components update"
+alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew upgrade --cask; ncu -g"
 alias updatepy="pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
 
 # Other IP / Method
@@ -75,5 +75,11 @@ alias wget='wget -c'
 
 alias makeenv='python3 -m venv .venv'
 alias actenv='source .venv/bin/activate'
+alias condenv='conda create -n'
+alias condact='conda activate'
 alias k='kubectl'
 alias brewdump='brew bundle dump --force'
+alias ld='lazydocker'
+alias cmdtools-reinstall='sudo rm -rf $(xcode-select --print-path) && xcode-select --install'
+alias discrete_on_charge='sudo pmset -c gpuswitch 1'
+alias clear-onedrive-cache='find ~/Library/Containers/ -type d -name OfficeFileCache -exec rm -r {} +'

@@ -1,8 +1,9 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 shopt -s dotglob
 
@@ -21,6 +22,7 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+# SHELL_SESSION_HISTORY=0
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -158,14 +160,12 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-source <(kubectl completion bash)
-complete -F __start_kubectl k
+# [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 eval "$(pyenv init -)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/garegin/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/garegin/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/garegin/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/garegin/Downloads/google-cloud-sdk/completion.bash.inc'; fi

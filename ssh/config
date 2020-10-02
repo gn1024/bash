@@ -1,0 +1,49 @@
+Host quvis_prod
+ HostName 18.237.181.179
+ Port 22
+ User admin
+ #IdentityFile ~/Projects/quvis/keys/quvis-portal-prod.pem
+
+Host quvis_stage
+ HostName 34.221.201.17
+ Port 22
+ User admin
+ #IdentityFile ~/Projects/quvis/keys/quvis-portal-dev.pem
+
+Host quvis_wp
+ HostName 34.219.75.52
+ Port 22
+ User ec2-user
+
+Host pvz_stage
+ HostName 95.213.237.204
+ Port 22
+ User root
+ LocalForward 54320 95.213.237.204:54320
+ LocalForward 56010 95.213.237.204:5601
+ LocalForward 8888  95.213.237.204:8888
+ LocalForward 15672 95.213.237.204:15672
+
+Host pvz_refactoring
+ HostName 95.213.236.241
+ Port 22
+ User root
+
+Host pvz_new_prod
+ HostName 46.161.54.220
+ Port 22
+ User root
+ LocalForward 54320 41.161.54.220:54320
+ LocalForward 56010 46.161.54.220:5601
+ LocalForward 8888  46.161.54.220:8888
+ LocalForward 15672 46.161.54.220:15672
+
+Host pvz_prod
+ HostName 95.213.236.73
+ Port 22
+ User root
+
+Host alex
+ Hostname alex.navis.team
+ Port 22
+ User garry
