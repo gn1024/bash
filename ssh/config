@@ -1,14 +1,14 @@
-Host quvis_prod
+Host quvis_licensing
  HostName 18.237.181.179
  Port 22
  User admin
  #IdentityFile ~/Projects/quvis/keys/quvis-portal-prod.pem
 
 Host quvis_stage
- HostName 34.221.201.17
+ HostName 44.233.198.122
  Port 22
  User admin
- #IdentityFile ~/Projects/quvis/keys/quvis-portal-dev.pem
+ IdentityFile ~/.ssh/keys/PortalStage.pem
 
 Host quvis_wp
  HostName 34.219.75.52
@@ -44,6 +44,11 @@ Host pvz_prod
  User root
 
 Host alex
- Hostname alex.navis.team
+ HostName alex.navis.team
  Port 22
  User garry
+
+Host parallels_linux
+ HostName 10.211.55.8
+ Port 22
+ User parallels
